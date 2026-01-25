@@ -1,0 +1,217 @@
+//sorteador
+const volume = document.getElementById('volume')
+const amostra_numero = document.getElementById('amostra_numero')
+const volume_fim = document.getElementById('volume_fim')
+const amostra_numero_fim = document.getElementById('amostra_numero_fim')
+let numero_sorteado = document.getElementById('numero_sorteado')
+const botao = document.getElementById('botao')
+
+amostra_numero.textContent = volume.value //captura os valores do range
+amostra_numero_fim.textContent = volume_fim.value
+
+    
+volume.addEventListener('input', function() { //ouve e passa pro "display" o numero que esta
+    amostra_numero.textContent = this.value;
+});
+volume_fim.addEventListener('input', function() { //ouve e passa pro "display" o numero que esta
+    amostra_numero_fim.textContent = this.value;
+  });
+
+  botao.addEventListener('click', function(){
+    const inicio = Number(volume.value) //pega o numero de um range que foi pego e guarda
+    const fim = Number(volume_fim.value)
+    if(fim < inicio){//confere se o numero inicial é menor ue o final
+        numero_sorteado.innerHTML = 'Número inicial é maior que o final! <br> Por favor, escolha outro número !'
+        numero_sorteado.style.backgroundColor = 'red';
+        numero_sorteado.style.color = 'white';
+        numero_sorteado.style.padding = '10px';
+        numero_sorteado.style.borderRadius = '10px';
+      }else{
+        const sorteado = Math.floor(Math.random() * (fim - inicio + 1)) + inicio // faz osorteio dos numeros escolhidos e pegos
+        numero_sorteado.innerHTML = `O Número sorteado foi : ${sorteado}   `
+        numero_sorteado.style.borderRadius = '10px';
+        numero_sorteado.style.backgroundColor = 'green';
+        numero_sorteado.style.color = 'white';
+        numero_sorteado.style.padding = '10px';
+        numero_sorteado.style.borderRadius = '10px';
+    }
+  })
+
+
+  // Conversor de medidas
+  const botao_converter = document.getElementById('botao-converter')
+  let selecao_entrada = document.getElementById('escolha-entrada')
+  let numero_entrada = document.getElementById('entrada_medida')
+  let selecao_saida = document.getElementById('escolha-saida')
+  let saida = selecao_saida.options[selecao_saida.selectedIndex]
+  let entrada = selecao_entrada.options[selecao_entrada.selectedIndex]
+  let convertido = document.getElementById('res')
+    
+  let valorum = entrada.value
+  let valordois = saida.value
+
+  function atualiza(entrada){
+  console.log(entrada)
+  }
+  function atualiza_saida(saida){
+  console.log(saida)
+  }
+  atualiza()
+  atualiza_saida()
+  
+  
+  botao_converter.addEventListener('click', function () {
+  let medida = parseFloat(numero_entrada.value);
+  let entrada = selecao_entrada.value;
+  let saida = selecao_saida.value;
+  
+
+if (isNaN(medida)) {
+ convertido.innerHTML ='Digite um número válido!'
+ convertido.style.backgroundColor = 'red' 
+ convertido.style.padding = '10px'
+ convertido.style.borderRadius = '10px'
+ return;
+
+}
+
+// milimetros
+
+ else if (entrada === 'mm' && saida === 'cm'){
+   let resmmcm = medida / 10
+   convertido.innerHTML = resmmcm + ` cm`
+    
+ } else if (entrada === 'mm' && saida === 'm'){
+   let resmmcm = medida / 1000
+   convertido.innerHTML = resmmcm + ` m`
+    
+ }else if (entrada === 'mm' && saida === 'km'){
+   let resmmcm = medida / 10000
+   convertido.innerHTML = resmmcm + ` km`
+    
+   //centimetros
+ }else if (entrada === 'cm' && saida === 'mm'){
+   let resmmcm = medida * 10
+   convertido.innerHTML = resmmcm + ` mm`
+ }else if (entrada === 'cm' && saida === 'm'){
+   let resmmcm = medida / 100
+   convertido.innerHTML = resmmcm + ` m`
+ }else if (entrada === 'cm' && saida === 'km'){
+   let resmmcm = medida / 1000
+   convertido.innerHTML = resmmcm + ` km`
+   
+   
+   //metros
+  }else if (entrada === 'm' && saida === 'mm'){
+    let resmmcm = medida * 100
+    convertido.innerHTML = resmmcm + ` mm`
+    
+    
+  }else if (entrada === 'm' && saida === 'cm'){
+   let resmmcm = medida * 100
+   convertido.innerHTML = resmmcm + ` cm`
+   
+  }else if (entrada === 'm' && saida === 'km'){
+    let resmmcm = medida / 1000
+    convertido.innerHTML = resmmcm + ` km`
+    
+  //quilometros
+
+  }else if (entrada === 'km' && saida === 'm'){
+   let resmmcm = medida * 1000
+   convertido.innerHTML = resmmcm + ` m`
+    
+ 
+ }else if (entrada === 'km' && saida === 'cm'){
+   let resmmcm = medida * 100
+   convertido.innerHTML = resmmcm + ` cm`
+    
+ }
+ else if (entrada === 'km' && saida === 'mm'){
+   let resmmcm = medida * 10000
+   convertido.innerHTML = resmmcm + ` mm`
+   
+  }else if (entrada === saida){  
+    let resmmcm = medida * 1
+   convertido.innerHTML = resmmcm
+   convertido.style.backgroundColor = 'green' 
+  convertido.style.padding = '10px'
+  convertido.style.color = 'white'
+  convertido.style.borderRadius = '10px'
+    
+ }
+  
+  })
+
+  //Calculatorrrrr
+
+  let num_um = document.getElementById('valor_um')
+  let num_dois = document.getElementById('valor_dois')
+
+  let mais = document.getElementById('mais')
+  let menos = document.getElementById('menos')
+  let vezes = document.getElementById('vezes')
+  let dividir = document.getElementById('dividir')
+  let clear = document.getElementById('clear')
+  
+  let total = document.getElementById('total')
+  
+  
+  mais.addEventListener('click', () => {
+    
+    const n1 = parseFloat(num_um.value)
+    const n2 = parseFloat(num_dois.value)
+    if(isNaN(n1) || isNaN(n2) ){
+      total.innerHTML = "Insira um valor!"
+    } else{
+    let produto = n1 + n2
+    total.innerHTML = produto
+    }
+  
+})
+  menos.addEventListener('click', () => {
+    
+    const n1 = parseFloat(num_um.value)
+    const n2 = parseFloat(num_dois.value)
+    if(isNaN(n1) || isNaN(n2) ){
+      total.innerHTML = "Insira um valor!"
+    } else{
+    let produto = n1 - n2
+    total.innerHTML = produto
+    }
+  
+})
+  vezes.addEventListener('click', () => {
+    
+    const n1 = parseFloat(num_um.value)
+    const n2 = parseFloat(num_dois.value)
+    if(isNaN(n1) || isNaN(n2) ){
+      total.innerHTML = "Insira um valor!"
+    } else{
+    let produto = n1 * n2
+    total.innerHTML = produto
+    }
+  
+})
+ dividir.addEventListener('click', () => {
+    const n1 = parseFloat(num_um.value)
+    const n2 = parseFloat(num_dois.value)
+    if (n2 === 0 || n1 === 0 ) {
+        total.innerHTML = "Erro: Divisão por 0"
+    } else {
+        total.innerHTML = n1 / n2
+    }
+})
+
+clear.addEventListener('click' , () =>{
+  num_um.value = 0
+  num_dois.value = 0
+  total.innerHTML = ''
+})
+
+
+////conversor de moedas
+
+
+
+

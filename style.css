@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+}
+
+body {
+  background: #f6f8fc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #555b66;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto
+}
+
+.titulo {
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  background: #f9fbff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  color: #4a4f5a;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+
+}
+input, select{
+  margin: 10px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.card-principal {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9fbff;
+  border: 1px solid #e3e7ee;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  color: #4a4f5a;
+}
+
+.card {
+
+  display: flex;
+  max-width: 80%;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  padding: 10px;
+
+}
+
+#numero_sorteado,
+#res, #total {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color : rgba(35, 125, 143, 0.785) ;
+  padding : 10px;
+  color : white;
+  border-radius : 10px;
+}
+
+.botao,
+#botao-converter, #mais, #menos, #vezes, #dividir, #clear {
+  background-color: #4f8cff;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  accent-color: #4f8cff;
+}
+
+h1,
+h2 {
+  color: #2f3a4a;
+}
+
+h3,
+h4 {
+  color: #445066;
+}
+
+#numero_sorteado {
+  padding: 20px;
+}

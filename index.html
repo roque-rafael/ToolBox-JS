@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToolBox JS</title>
+</head>
+
+<body>
+    <header class="titulo">
+        <h1>ToolBox JS</h1>
+        <h2>Bem Vindo ao ToolBox</h2>
+        <h2>Aqui voce encontra as melhores ferramentas para o seu dia a dia na internet</h2>
+    </header>
+
+
+    <div class="container">
+        <div class="card-principal">
+            <h1>Sorteio de Números</h1>
+            <p>Coloque um intervalo de números e sorteie o seu</p>
+            <div class="card">
+
+                <h3>Insira o intervalo que deseja sortear</h3>
+                <p>escolha o número inicial</p>
+                <input type="range" id="volume" name="numeros" min="-100" max="100" value="0">
+                <span id="amostra_numero">0</span>
+                <p>escolha o número final</p>
+                <input type="range" id="volume_fim" name="numeros" min="-100" max="100" value="0">
+                <span id="amostra_numero_fim">0</span>
+                <button class="botao" id="botao">Sortear</button>
+                <p id="numero_sorteado">Aguardando...</p>
+            </div>
+            <div class="card">
+                <h1>Conversões de Medidas</h1>
+                <p>Converta as principais medidas do dia a dia</p>
+                
+                    <h3>Insira a medida que quer converter</h3>
+                    <p>Escolha as unidades de medida para a conversão</p>
+                    <input type="number" id="entrada_medida" placeholder="Insira a medida">
+                    <select id="escolha-entrada" onchange="atualiza(this.value)">
+                        <option value="mm" selected>Milimetro (mm)</option>
+                        <option value="cm">Centímetro (cm)</option>
+                        <option value="m">Metro (m)</option>
+                        <option value="km">Quilometro (km)</option>
+                    </select>
+                    <select id="escolha-saida" onchange="atualiza_saida(this.value)">
+                        <option value="mm" selected>Milimetro (mm)</option>
+                        <option value="cm">Centímetro (cm)</option>
+                        <option value="m">Metro (m)</option>
+                        <option value="km">Quilometro (km)</option>
+                    </select>
+
+                    <button id="botao-converter">Converter</button>
+                    <p id="res">Aguardando...</p>
+            </div>
+            <div class="card">
+                <h1>Calculadora</h1>
+                <p>Faça operações simples que salvam seu dia a dia</p>
+                
+                    <h3>Insira os valores</h3>
+                    <p>Escolha a operação e confira o resultado</p>
+                    <input type="number" id="valor_um" value="0">
+                    <input type="number" id="valor_dois" value="0">
+                    <div id="operacoes">
+                    <button id="mais">+</button>
+                    <button id="menos">-</button>
+                    <button id="vezes">x</button>
+                    <button id="dividir">/</button>
+                    <button id="clear">Limpar</button>
+
+                    </div>
+                    <p id="total">0</p>
+                
+            </div>
+            <div class="card">
+                
+            </div>
+
+               
+
+
+
+            
+
+        </div>
+    </div>
+
+
+    <footer>
+        <h2>teste</h2>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
