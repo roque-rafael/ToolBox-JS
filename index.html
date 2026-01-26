@@ -64,23 +64,41 @@
                     <input type="number" id="valor_um" value="0">
                     <input type="number" id="valor_dois" value="0">
                     <div id="operacoes">
-                    <button id="mais">+</button>
-                    <button id="menos">-</button>
-                    <button id="vezes">x</button>
-                    <button id="dividir">/</button>
-                    <button id="clear">Limpar</button>
+                        <button id="mais">+</button>
+                        <button id="menos">-</button>
+                        <button id="vezes">x</button>
+                        <button id="dividir">/</button>
+                        <button id="clear">Limpar</button>
 
                     </div>
                     <p id="total">0</p>
                 
             </div>
             <div class="card">
+                <h1>Conversor de moedas (offline)</h1>
+                <p>Faça conversões simples de moedas</p>
                 
-            </div>
+                    <h3>Insira os valores</h3>
+                    <p>Escolha a moeda que deseja e confira o resultado</p>
+                    <p>1 Dolar USD = 5,29 Real BRL</p>
+                    <p>1 Euro EUR = 6,29 Real BRL</p>
+                    <p>Cotação dia 25/01/2026</p>
+                    <select id="selecionarMoeda" >
+                        <option value="real">Real BRL</option>
+                        <option value="dolar">Dolar USD</option>
+                        <option value="euro">Euro EUR</option>
+                    </select>
+                    <input type="number" id="input_moeda">
+                    <button id="btnMoeda">Converter</button>
+                    <p id="realRes"></p>
+                    <p id="dolarRes"></p>
+                    <p id="euroRes"></p>
 
+            </div>
+            
                
 
-
+            
 
             
 

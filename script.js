@@ -41,8 +41,8 @@ volume_fim.addEventListener('input', function() { //ouve e passa pro "display" o
   // Conversor de medidas
   const botao_converter = document.getElementById('botao-converter')
   let selecao_entrada = document.getElementById('escolha-entrada')
-  let numero_entrada = document.getElementById('entrada_medida')
   let selecao_saida = document.getElementById('escolha-saida')
+  let numero_entrada = document.getElementById('entrada_medida')
   let saida = selecao_saida.options[selecao_saida.selectedIndex]
   let entrada = selecao_entrada.options[selecao_entrada.selectedIndex]
   let convertido = document.getElementById('res')
@@ -50,15 +50,7 @@ volume_fim.addEventListener('input', function() { //ouve e passa pro "display" o
   let valorum = entrada.value
   let valordois = saida.value
 
-  function atualiza(entrada){
-  console.log(entrada)
-  }
-  function atualiza_saida(saida){
-  console.log(saida)
-  }
-  atualiza()
-  atualiza_saida()
-  
+ 
   
   botao_converter.addEventListener('click', function () {
   let medida = parseFloat(numero_entrada.value);
@@ -211,6 +203,89 @@ clear.addEventListener('click' , () =>{
 
 
 ////conversor de moedas
+
+// Pegamos os elementos (o objeto em si)
+const input_moeda = document.getElementById('input_moeda');
+const btnMoeda = document.getElementById('btnMoeda');
+const realRes = document.getElementById('realRes');
+const dolarRes = document.getElementById('dolarRes');
+const euroRes = document.getElementById('euroRes');
+const selecionarMoeda = document.getElementById('selecionarMoeda');
+
+btnMoeda.addEventListener('click', function() {
+    // PEGUE O VALOR DENTRO DO EVENTO DE CLIQUE
+    let valorMoedafim = parseFloat(input_moeda.value);
+    let selecionado = selecionarMoeda.value;
+
+    // Validação
+    if (isNaN(valorMoedafim)) {
+        realRes.innerHTML = 'Digite um número válido!';
+        realRes.style.backgroundColor = 'red';
+        realRes.style.padding = '10px';
+        realRes.style.borderRadius = '10px';
+        return;
+    } else {
+        realRes.style.backgroundColor = 'transparent'; // Limpa o erro se for válido
+        dolarRes.style.backgroundColor = 'transparent'; // Limpa o erro se for válido
+        euroRes.style.backgroundColor = 'transparent'; // Limpa o erro se for válido
+    }
+
+    // Taxas de câmbio (Exemplo aproximado para 2026)
+    let taxaDolar = 5.29;
+    let taxaEuro = 6.29;
+
+    if (selecionado === 'real') {
+        realRes.innerHTML = " ";
+        dolarRes.innerHTML = "US$ " + (valorMoedafim / taxaDolar).toFixed(2);
+        euroRes.innerHTML = "€ " + (valorMoedafim / taxaEuro).toFixed(2);
+      
+        dolarRes.style.backgroundColor = 'green';
+        dolarRes.style.padding = '10px';
+        dolarRes.style.color = 'white';
+        dolarRes.style.borderRadius = '10px';
+        euroRes.style.backgroundColor = 'green';
+        euroRes.style.padding = '10px';
+        euroRes.style.marginTop = '10px';
+        euroRes.style.color = 'white';
+        euroRes.style.borderRadius = '10px';
+        
+        
+      } 
+      else if (selecionado === 'dolar') {
+        dolarRes.innerHTML = " ";
+        realRes.innerHTML = "R$ " + (valorMoedafim * taxaDolar).toFixed(2);
+        euroRes.innerHTML = "€ " + (valorMoedafim * (taxaDolar / taxaEuro)).toFixed(2);
+
+
+        realRes.style.backgroundColor = 'green';
+        realRes.style.padding = '10px';
+        realRes.style.color = 'white';
+        realRes.style.borderRadius = '10px';
+        euroRes.style.backgroundColor = 'green';
+        euroRes.style.padding = '10px';
+        euroRes.style.marginTop = '10px';
+        euroRes.style.color = 'white';
+        euroRes.style.borderRadius = '10px';
+        
+        
+      } 
+      else if (selecionado === 'euro') {
+        euroRes.innerHTML = " ";
+        realRes.innerHTML = "R$ " + (valorMoedafim * taxaEuro).toFixed(2);
+        dolarRes.innerHTML = "US$ " + (valorMoedafim * (taxaEuro / taxaDolar)).toFixed(2);
+        
+        realRes.style.backgroundColor = 'green';
+        realRes.style.padding = '10px';
+        realRes.style.color = 'white';
+        realRes.style.borderRadius = '10px';
+        dolarRes.style.backgroundColor = 'green';
+        dolarRes.style.padding = '10px';
+        dolarRes.style.marginTop = '10px';
+        dolarRes.style.color = 'white';
+        dolarRes.style.borderRadius = '10px';
+
+    }
+});
 
 
 
