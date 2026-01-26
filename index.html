@@ -35,72 +35,87 @@
             <div class="card">
                 <h1>Conversões de Medidas</h1>
                 <p>Converta as principais medidas do dia a dia</p>
-                
-                    <h3>Insira a medida que quer converter</h3>
-                    <p>Escolha as unidades de medida para a conversão</p>
-                    <input type="number" id="entrada_medida" placeholder="Insira a medida">
-                    <select id="escolha-entrada" onchange="atualiza(this.value)">
-                        <option value="mm" selected>Milimetro (mm)</option>
-                        <option value="cm">Centímetro (cm)</option>
-                        <option value="m">Metro (m)</option>
-                        <option value="km">Quilometro (km)</option>
-                    </select>
-                    <select id="escolha-saida" onchange="atualiza_saida(this.value)">
-                        <option value="mm" selected>Milimetro (mm)</option>
-                        <option value="cm">Centímetro (cm)</option>
-                        <option value="m">Metro (m)</option>
-                        <option value="km">Quilometro (km)</option>
-                    </select>
 
-                    <button id="botao-converter">Converter</button>
-                    <p id="res">Aguardando...</p>
+                <h3>Insira a medida que quer converter</h3>
+                <p>Escolha as unidades de medida para a conversão</p>
+                <input type="number" id="entrada_medida" placeholder="Insira a medida">
+                <select id="escolha-entrada" onchange="atualiza(this.value)">
+                    <option value="mm" selected>Milimetro (mm)</option>
+                    <option value="cm">Centímetro (cm)</option>
+                    <option value="m">Metro (m)</option>
+                    <option value="km">Quilometro (km)</option>
+                </select>
+                <select id="escolha-saida" onchange="atualiza_saida(this.value)">
+                    <option value="mm" selected>Milimetro (mm)</option>
+                    <option value="cm">Centímetro (cm)</option>
+                    <option value="m">Metro (m)</option>
+                    <option value="km">Quilometro (km)</option>
+                </select>
+
+                <button id="botao-converter">Converter</button>
+                <p id="res">Aguardando...</p>
             </div>
             <div class="card">
                 <h1>Calculadora</h1>
                 <p>Faça operações simples que salvam seu dia a dia</p>
-                
-                    <h3>Insira os valores</h3>
-                    <p>Escolha a operação e confira o resultado</p>
-                    <input type="number" id="valor_um" value="0">
-                    <input type="number" id="valor_dois" value="0">
-                    <div id="operacoes">
-                        <button id="mais">+</button>
-                        <button id="menos">-</button>
-                        <button id="vezes">x</button>
-                        <button id="dividir">/</button>
-                        <button id="clear">Limpar</button>
 
-                    </div>
-                    <p id="total">0</p>
-                
+                <h3>Insira os valores</h3>
+                <p>Escolha a operação e confira o resultado</p>
+                <input type="number" id="valor_um" value="0">
+                <input type="number" id="valor_dois" value="0">
+                <div id="operacoes">
+                    <button id="mais">+</button>
+                    <button id="menos">-</button>
+                    <button id="vezes">x</button>
+                    <button id="dividir">/</button>
+                    <button id="clear">Limpar</button>
+
+                </div>
+                <p id="total">0</p>
+
             </div>
             <div class="card">
                 <h1>Conversor de moedas (offline)</h1>
                 <p>Faça conversões simples de moedas</p>
-                
-                    <h3>Insira os valores</h3>
-                    <p>Escolha a moeda que deseja e confira o resultado</p>
-                    <p>1 Dolar USD = 5,29 Real BRL</p>
-                    <p>1 Euro EUR = 6,29 Real BRL</p>
-                    <p>Cotação dia 25/01/2026</p>
-                    <select id="selecionarMoeda" >
-                        <option value="real">Real BRL</option>
-                        <option value="dolar">Dolar USD</option>
-                        <option value="euro">Euro EUR</option>
-                    </select>
-                    <input type="number" id="input_moeda">
-                    <button id="btnMoeda">Converter</button>
-                    <p id="realRes"></p>
-                    <p id="dolarRes"></p>
-                    <p id="euroRes"></p>
+
+                <h3>Insira os valores</h3>
+                <p>Escolha a moeda que deseja e confira o resultado</p>
+                <p>1 Dolar USD = 5,29 Real BRL</p>
+                <p>1 Euro EUR = 6,29 Real BRL</p>
+                <p>Cotação dia 25/01/2026</p>
+                <select id="selecionarMoeda">
+                    <option value="real">Real BRL</option>
+                    <option value="dolar">Dolar USD</option>
+                    <option value="euro">Euro EUR</option>
+                </select>
+                <input type="number" id="input_moeda">
+                <button id="btnMoeda">Converter</button>
+                <p id="realRes"></p>
+                <p id="dolarRes"></p>
+                <p id="euroRes"></p>
 
             </div>
-            
-               
+            <div class="card">
+                <h1>Gerador de senhas</h1>
+                <p>Tá dificl escolher uma senha? Faça a sua aqui</p>
 
-            
+                <h3>Gere uma senha</h3>
+                <p>Escolha caracteres, tamanho e guarde para uso</p>
+                <div class="gerar">
+                    <p>escolha o número inicial</p>
+                    <input type="range" id="caracteresTotais" min="4" max="12">
+                    <span id="amostra_caractere">Min 4 caracteres Max 12 caracteres</span>
+                    <label>Letras Maiúsculas</label>
+                    <input type="checkbox" id="letrasMaiusculas">
+                    <label>Letras Minúsculas</label>
+                    <input type="checkbox" id="letras">
+                    <label>Números</label>
+                    <input type="checkbox" id="numeros">
+                    <label>Sìmbolos</label>
+                    <input type="checkbox" id="simbolos">
+                </div>
 
-            
+            </div>
 
         </div>
     </div>
