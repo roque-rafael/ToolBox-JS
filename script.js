@@ -287,6 +287,46 @@ btnMoeda.addEventListener('click', function() {
     }
 });
 
+//gerador de senhas
 
 
+const rangeSenha = document.getElementById('caracteresTotais')
+const amostra = document.getElementById('amostra_caractere')
+const checkMaiuscula = document.getElementById('letrasMaiusculas')
+const checkMinuscula = document.getElementById('letras')
+const checkNumeros = document.getElementById('numeros')
+const checkSimbolos = document.getElementById('simbolos')
+const senhaGerada = document.getElementById('senhaGerada')
+const gerar = document.getElementById('gerar')
 
+const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' 
+const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz' 
+const numeros = '0123456789' 
+const simbolos = '!@#%¨&*_-+=-'
+
+amostra.textContent = rangeSenha.value //captura os valores do range
+
+
+    
+rangeSenha.addEventListener('input', function() { //ouve e passa pro "display" o numero que esta
+    amostra.textContent = this.value;
+});
+
+gerar.addEventListener('click', () => {
+   let caracteres = '' 
+
+   
+   
+   if (checkMaiuscula.checked) caracteres += letrasMaiusculas 
+   if (checkMinuscula.checked) caracteres += letrasMinusculas 
+   if (checkNumeros.checked) caracteres += numeros 
+   if (checkSimbolos.checked) caracteres += simbolos 
+   let senha = '' 
+   for (let i = 0; i < rangeSenha.value; i++) { 
+     const randomIndex = Math.floor(Math.random() * caracteres.length) 
+     if (caracteres === '') {
+       senhaGerada.innerHTML = 'Selecione pelo menos uma opção!'
+        return }
+    senha += caracteres[randomIndex] }
+    senhaGerada.innerHTML = senha
+   })

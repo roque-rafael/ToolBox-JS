@@ -66,7 +66,7 @@ input, select{
 }
 
 #numero_sorteado,
-#res, #total, #btnMoeda {
+#res, #total, #btnMoeda  {
   margin-top: 10px;
   margin-bottom: 20px;
   background-color : rgba(35, 125, 143, 0.785) ;
@@ -76,7 +76,7 @@ input, select{
 }
 
 .botao,
-#botao-converter, #mais, #menos, #vezes, #dividir, #clear {
+#botao-converter, #mais, #menos, #gerar, #vezes, #dividir, #clear {
   background-color: #4f8cff;
   color: #ffffff;
   border-radius: 10px;
