@@ -102,3 +102,7 @@ h4 {
 #numero_sorteado {
   padding: 20px;
 }
+footer{
+  display: flex;
+  justify-content: center;
+}
